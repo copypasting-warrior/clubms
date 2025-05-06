@@ -70,7 +70,7 @@ function RegisterPage() {
     };
 
     return (
-        <div style={{ padding: '20px' }}>
+        <div style={{paddingLeft: '20px',paddingRight: '20px' }}>
             <AdminNavBar />
             <h1>Register New User</h1>
             <form onSubmit={handleUserSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px', maxWidth: '400px' }}>

@@ -115,7 +115,7 @@ function AdminPage() {
       <AdminNavBar />
       <h1>Admin Dashboard</h1>
       
-      <div style={{ display: 'flex', gap: '20px',marginBottom: '2rem' }}>
+      <div style={{ display: 'flex', gap: '20px',marginBottom: '2rem',marginLeft: '2rem',marginRight: '2rem'}}>
         <div style={{ flex: 1, border: '1px solid #ccc', padding: '10px', boxSizing: 'border-box', backgroundColor: '#3356ff', color: 'white', borderRadius: '10px' }}>
           <h2 style={{ color: 'white' }}>Events</h2>
           {editableEvents.map(event => (

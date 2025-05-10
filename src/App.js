@@ -5,6 +5,7 @@ import AdminPage from './components/AdminPage';
 import RegisterPage from './components/RegisterPage';
 import HomePage from './components/HomePage';
 import EventDetails from './components/EventDetails';
+import ProfilePage from './components/ProfilePage';
 
 // Create Auth Context
 export const AuthContext = createContext(null);
@@ -61,7 +62,7 @@ const mockEvents = [
     maxSeats: 50,
     seatsBooked: 50,
     tier: 'Silver',
-    imageUrl: 'https://images.pexels.com/photos/1903837/pexels-photo-1903837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=150',
+    imageUrl: 'https://plus.unsplash.com/premium_photo-1661306437817-8ab34be91e0c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description: 'A vibrant summer festival event for Silver tier members.',
   },
   {
@@ -156,6 +157,7 @@ function App() {
           <Route path="/admin" element={user && user.isAdmin ? <AdminPage /> : <Navigate to="/" replace />} />
           <Route path="/home" element={user && !user.isAdmin ? <HomePage /> : <Navigate to="/" replace />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/events/:id" element={user && !user.isAdmin ? <EventDetails /> : <Navigate to="/" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

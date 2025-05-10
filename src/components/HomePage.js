@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../App';
+import UserNavBar from './UserNavBar'; // Adjust the path as needed
 
 function HomePage() {
   const { user, events, tierOrder } = useContext(AuthContext);
@@ -13,7 +14,11 @@ function HomePage() {
 
   return (
     <div style={styles.pageContainer} role="main" aria-label="User home with events">
-      <h1 style={styles.heading}>Welcome, {user.email}</h1>
+      <UserNavBar />
+      <div style={styles.banner}>
+        <h2 style={styles.bannerText}>Club Events</h2>
+      </div>
+      <h1 style={styles.heading}>Welcome, {user.memberId}</h1>
       <p style={styles.tierText}>Your tier: {user.tier}</p>
       <div style={styles.eventsGrid}>
         {filteredEvents.length === 0 && (
@@ -39,24 +44,49 @@ function HomePage() {
 
 const styles = {
   pageContainer: {
-    maxWidth: 900,
+    maxWidth: '100%',
     margin: '40px auto',
-    padding: '0 15px',
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    textAlign: 'center',
+  },
+  banner: {
+    width: '100%',
+    height: '100vh',
+    backgroundImage: 'url("https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")', // Replace with your image URL
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  bannerText: {
+    color: '#fff',
+    fontSize: '6rem ',
+    fontWeight: 'bold',
+    textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
   },
   heading: {
+    paddingTop:'20vh',
+    paddingBottom: '20vh',
     color: '#4b6cb7',
+    padding: '0 15px',
     marginBottom: 5,
+    textAlign: 'center',
+    fontSize:'4rem'
   },
   tierText: {
     marginBottom: 25,
     fontSize: 18,
     color: '#555',
+    padding: '0 15px',
+    textAlign: 'center',
   },
   eventsGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill,minmax(230px,1fr))',
+    padding: '0 15vw',
+    gridTemplateColumns: 'repeat(auto-fill,minmax(460px,1fr))',
     gap: 20,
+    textAlign: 'center',
   },
   cardLink: {
     textDecoration: 'none',
@@ -70,12 +100,12 @@ const styles = {
     cursor: 'pointer',
     display: 'flex',
     flexDirection: 'column',
-    height: '100%',
+    height: '20vw',
     transition: 'transform 0.2s ease',
   },
   cardImg: {
     width: '100%',
-    height: 130,
+    height: '15vw',
     objectFit: 'cover',
   },
   cardTitle: {

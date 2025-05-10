@@ -70,12 +70,21 @@ function RegisterPage() {
     };
 
     return (
+<<<<<<< HEAD
         <div style={{  textAlign: 'center',backgroundImage: 'url(https://images.unsplash.com/photo-1744522184450-77b96718b074?q=80&w=2715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'}}>
             <AdminNavBar />
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px', width:'30%',backgroundColor:'rgba(238, 241, 244, 0.2)',marginLeft:'34vw',marginTop:'2rem',marginBottom:'0rem',borderRadius:'10px',padding:'20px',paddingBottom:'40px'}}> 
                 <div>
                     <h1>Register New User</h1>
                     <form onSubmit={handleUserSubmit} style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', gap: '15px', maxWidth: '400px'}}>
+=======
+        <div style={{ paddingLeft: '20px',paddingRight:'20px', textAlign: 'center' }}>
+            <AdminNavBar />
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}>
+                <div>
+                    <h1>Register New User</h1>
+                    <form onSubmit={handleUserSubmit} style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', gap: '15px', maxWidth: '400px' }}>
+>>>>>>> 7ee659e27aae1050a434a87c9ff447e1c8ff9c08
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <label>Tier:</label>
                             <input
@@ -175,7 +184,11 @@ function RegisterPage() {
                     </form>
                 </div>
             </div>
+<<<<<<< HEAD
             
+=======
+            <button onClick={() => navigate('/admin')} style={{ marginTop: '20px' }}>Back to Admin Dashboard</button>
+>>>>>>> 7ee659e27aae1050a434a87c9ff447e1c8ff9c08
         </div>
     );
 }
